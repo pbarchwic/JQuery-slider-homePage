@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+<meta charset="utf-8"/>
+<title>Patryk Barchwic - Portfolio</title>
+<meta name= "description" content= "moja strona"/>
+<meta name="keywords" content=" cwiczenia, nauka"/>
+<meta http-eequiv= "X-UA-Compatible" content="IE=edge, chrome=1"/>
+
+<link rel="stylesheet"href="style.css"type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+
+<body>
+
+</div>
+
+  <div id="container">
+	<nav>
+	<div class="menu" id="first">About</div>
+	<div class="menu" id="second"> Umiejętności</div>
+	<div class="menu" id="third"> Projekty </div>
+	<div class="menu" id="fourth"> Kontakt </div>
+
+	</nav>
+	<div class="ja  slide">
+	<div class="ex">X</div>
+	<span class = "content">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta placerat purus vel imperdiet. Morbi quis eros dictum, vulputate lacus ac, lacinia mi. Nunc at tellus fermentum, feugiat tortor ut, euismod arcu. Cras nec porttitor leo. Praesent mattis enim nec finibus mattis. Ut lobortis accumsan ex eu vulputate. Maecenas sodales turpis eros, nec blandit magna porttitor id. Quisque ac quam efficitur, sagittis turpis eget, pulvinar nunc. Sed dignissim molestie lorem sed ornare. Aenean faucibus faucibus dui sit amet vestibulum. Ut nec accumsan dui, in lobortis nisi. Integer tincidunt aliquet purus, in consequat est fermentum vel. Fusce facilisis tellus ac metus placerat, ullamcorper rhoncus enim pharetra. In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+Suspendisse quis ex risus. Pellentesque velit tellus, bibendum sit amet lacus quis, tempus porta eros. Curabitur mollis, quam sodales hendrerit feugiat, orci diam tincidunt nulla, quis accumsan turpis turpis et dolor. Suspendisse euismod hendrerit lacus, sed tempor velit. Integer feugiat ligula lorem, non eleifend nisl tempor sit amet. Sed vitae dolor quis nisl mattis laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In cursus, ex vitae aliquet varius, leo ligula sodales nibh, quis fermentum turpis enim sit amet eros.
+	</span>
+	</div>
+	<div class="ty slide">
+		<div class="ex">X</div>
+	<span class = "content">
+	</span>
+	</div>
+	<div class="my slide">
+		<div class="ex">X</div>
+	<span class = "content">
+	</span>
+	</div>
+	<div class="wy slide">
+		<div class="ex">X</div>
+	<span class = "content">
+	</span>
+	</div>
+	</div>
+	
+	
+<script type="text/javascript" >
+$(document).ready(function(){
+		var i=0
+		var showSlide = function(noSlide){
+		noSlide.animate({left: 100 + "%"}, 500);
+		i++;
+		};
+		var hideMenu = function(btn)
+		{
+		btn.animate({ opacity: 0 });
+		};
+		var hideSlide = function(noSlide)
+		{ 
+		noSlide.animate({left: 0 + "%"}, 500, function(){
+		$("#first").animate({ opacity: 1 });
+		});
+		};
+		
+$("#first").click(function(){
+		
+	if ( i>0)
+	{
+	hideSlide($(".slide"));
+	showSlide($(".ja"));
+	}
+	else
+	{
+	showSlide($(".ja"));
+	hideMenu($(this));
+	}
+		
+});
+
+$("#second").click(function(){
+
+	if ( i>0)
+	{
+	hideSlide($(".slide"));
+	showSlide($(".ty"));
+	hideMenu($(this));
+	}
+	else
+	{
+	showSlide($(".ty"));
+	hideMenu($(this));
+	}
+});
+
+$("#third").click(function(){
+
+		hideSlide($(".slide"));
+		$(".my").animate({left: 100 + "%"}, 500, function()
+		{
+		$("#third").animate({ opacity: 0 }, "fast");
+		});
+});
+
+$("#fourth").click(function(){
+
+		hideSlide($(".slide"));
+		$(".wy").animate({left: 100 + "%"}, 500, function()
+		{
+		$("#fourth").animate({ opacity: 0 }, "fast");
+		});
+});
+
+$(".ex").click(function(){
+
+		$(".slide").animate({left: 0 + "%"}, "slow", function(){
+
+		$(".menu").animate({ opacity: 1 });
+		});
+});
+
+
+		
+});
+
+
+</script>
+<!--
+$(document).ready(function(){
+    $('#slide').click(function(){
+    var hidden = $('.hidden');
+    if (hidden.hasClass('visible')){
+        hidden.animate({"left":"-1000px"}, "slow").removeClass('visible');
+    } else {
+        hidden.animate({"left":"0px"}, "slow").addClass('visible');
+    }
+    });
+});-->
+</body>
+</html>

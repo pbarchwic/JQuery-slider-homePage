@@ -1,0 +1,110 @@
+body
+{
+  margin: 0 !important;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+
+}
+
+#container
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;	
+	background: grey;
+}
+nav
+{
+	
+	position:absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 10%;
+	height: 50%;
+	z-index: 100;
+	bor der: 1px solid black;
+}
+
+.menu
+{
+
+	position: relative;
+	background: red;
+	margin: 20px 0 20px 0;
+	padding: 10px;
+	width: 80%;
+	text-align: center;
+	border-radius: 0 5px  5px 0 ;
+	z-index: 100;
+	cursor: pointer;
+}
+.ja
+{
+	position: absolute;
+	height: 80%;
+	width: 100%;	
+	bottom: 0px;
+	margin-left:-100%;
+	background: yellow;
+	z-index: 1
+}
+.ty
+{
+	position: absolute;
+	height: 80%;
+	width: 100%;	
+	bottom: 0px;
+	margin-left:-100%;
+	vertical-align: center;
+	background: blue;
+	z-index: 1
+}
+.my
+{
+	position: absolute;
+	height: 80%;
+	width: 100%;	
+	bottom: 0px;
+	margin-left:-100%;
+	line-height: 100%;
+	vertical-align: center;
+	background: green;
+	z-index: 1
+}
+.wy
+{
+	position: absolute;
+	height: 80%;
+	width: 100%;	
+	bottom: 0px;
+	margin-left:-100%;
+	line-height: 100%;
+	vertical-align: center;
+	background: pink;
+	z-index: 1
+}
+
+.ex
+{
+	position: absolute;
+	background: grey;
+	right: 0%;
+	margin: 20px 0 20px 0;
+	padding: 5px;
+	width: 20px;
+	text-align: center;
+	border-radius: 5px 0 0 5px;
+	z-index: 100;
+	cursor: pointer;
+	
+}
+.content
+{
+	display: block;
+	position: relative;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
