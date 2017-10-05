@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
 
 </head>
 
@@ -55,39 +56,46 @@ Suspendisse quis ex risus. Pellentesque velit tellus, bibendum sit amet lacus qu
 	
 <script type="text/javascript" >
 $(document).ready(function(){
-		var i=0
+		
+		var i=0;
+
+		var buttonArray = [$("#first"),$("#second"), $("#third"), $("#fourth")];
+		
+		var pageArray = [$(".ja"),$(".ty"), $(".my"), $(".wy")]
+		
 		var showSlide = function(noSlide){
 		noSlide.animate({left: 100 + "%"}, 500);
 		i++;
 		};
+		
 		var hideMenu = function(btn)
-		{
-		btn.animate({ opacity: 0 });
-		};
+		{btn.animate({backgroundColor: "blue"},"fast")};
+		
 		var hideSlide = function(noSlide)
-		{ 
-		noSlide.animate({left: 0 + "%"}, 500, function(){
-		$("#first").animate({ opacity: 1 });
-		});
-		};
+		{noSlide.animate({left: 0 + "%"}, 500)};
 		
-$("#first").click(function(){
+		var showMenu = function(btn)
+		{btn.animate({backgroundColor: "red"},"fast")};
 		
-	if ( i>0)
+buttonArray[0].click(function(){	
+
+	showMenu($(".menu"));
+	if ( i > 0 )
 	{
 	hideSlide($(".slide"));
-	showSlide($(".ja"));
+	showSlide(pageArray[0]);
+	hideMenu($(this));
 	}
 	else
 	{
-	showSlide($(".ja"));
+	showSlide(pageArray[0]);
 	hideMenu($(this));
 	}
-		
 });
 
 $("#second").click(function(){
 
+	showMenu($(".menu"));
 	if ( i>0)
 	{
 	hideSlide($(".slide"));
@@ -103,28 +111,44 @@ $("#second").click(function(){
 
 $("#third").click(function(){
 
-		hideSlide($(".slide"));
-		$(".my").animate({left: 100 + "%"}, 500, function()
-		{
-		$("#third").animate({ opacity: 0 }, "fast");
-		});
+	showMenu($(".menu"));
+	if ( i>0)
+	{
+	hideSlide($(".slide"));
+	showSlide($(".my"));
+	hideMenu($(this));
+	
+	}
+	else
+	{
+	showSlide($(".my"));
+	hideMenu($(this));
+	}
 });
 
 $("#fourth").click(function(){
-
-		hideSlide($(".slide"));
-		$(".wy").animate({left: 100 + "%"}, 500, function()
-		{
-		$("#fourth").animate({ opacity: 0 }, "fast");
-		});
+	
+	showMenu($(".menu"));
+	if ( i>0)
+	{
+	hideSlide($(".slide"));
+	showSlide($(".wy"));
+	hideMenu($(this));
+	
+	}
+	else
+	{
+	showSlide($(".wy"));
+	hideMenu($(this));
+	}
 });
 
 $(".ex").click(function(){
 
 		$(".slide").animate({left: 0 + "%"}, "slow", function(){
-
-		$(".menu").animate({ opacity: 1 });
+		$(".menu").animate({backgroundColor: "red"},"fast").on("click");
 		});
+		i = 0;
 });
 
 
@@ -133,16 +157,6 @@ $(".ex").click(function(){
 
 
 </script>
-<!--
-$(document).ready(function(){
-    $('#slide').click(function(){
-    var hidden = $('.hidden');
-    if (hidden.hasClass('visible')){
-        hidden.animate({"left":"-1000px"}, "slow").removeClass('visible');
-    } else {
-        hidden.animate({"left":"0px"}, "slow").addClass('visible');
-    }
-    });
-});-->
+
 </body>
 </html>
